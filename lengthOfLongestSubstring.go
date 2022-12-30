@@ -1,15 +1,9 @@
-package main
+package leetcode
 
 import (
-	"fmt"
 	"math"
 	"strings"
 )
-
-func main() {
-	test := "pwwkew"
-	fmt.Print(lengthOfLongestSubstring(test))
-}
 
 func lengthOfLongestSubstring(s string) int {
 	sRuneSlice := []rune(s)
