@@ -11,7 +11,7 @@ class Solution:
         if not root:
             return 0
 
-        depth_left = self.maxDepth(root.left)
-        depth_right = self.maxDepth(root.right)
+        # depth_left = self.maxDepth(root.left)
+        # depth_right = self.maxDepth(root.right)
 
-        return depth_left + 1 if depth_left > depth_right else depth_right + 1
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
