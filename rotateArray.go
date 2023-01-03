@@ -1,15 +1,9 @@
-package main
-
-import "fmt"
-
-func main() {
-	array := []int{1, 2, 3, 4, 5, 6, 7}
-	k := 3
-	rotate(array, k)
-	fmt.Print(array)
-}
+package leetcode
 
 func rotate(nums []int, k int) {
+	if k == len(nums) || len(nums) == 1 || k == 0 {
+		return
+	}
 	k = k % len(nums)
 	reverse(nums, 0, len(nums)-1)
 	reverse(nums, 0, k-1)
@@ -19,6 +13,6 @@ func rotate(nums []int, k int) {
 func reverse(nums []int, i, j int) {
 
 	for indx := 0; indx <= (j-i)/2; indx++ {
-		nums[indx+i], nums[j-indx] = nums[j-indx], nums[indx]+i
+		nums[indx+i], nums[j-indx] = nums[j-indx], nums[indx+i]
 	}
 }
